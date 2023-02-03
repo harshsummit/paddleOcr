@@ -53,6 +53,8 @@ class NLPBaseModel(nn.Layer):
         super(NLPBaseModel, self).__init__()
         if checkpoints is not None:  # load the trained model
             self.model = model_class.from_pretrained(checkpoints)
+        elif isinstance(pretrained, (str, )) and os.path.exists(pretrained):
+            self.model = model_class.from_pretrained(pretrained)
         else:  # load the pretrained-model
             pretrained_model_name = pretrained_model_dict[base_model_class][
                 mode]
