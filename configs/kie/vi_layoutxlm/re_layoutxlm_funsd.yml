@@ -21,7 +21,6 @@ Architecture:
   Backbone:
     name: LayoutXLMForRe
     pretrained: True
-    mode: vi
     checkpoints:
 
 Loss:
