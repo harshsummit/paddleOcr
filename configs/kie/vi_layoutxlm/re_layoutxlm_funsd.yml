@@ -6,7 +6,7 @@ Global:
   save_model_dir: ./output/re_layoutxlm_funsd
   save_epoch_step: 2000
   # evaluation is run every 10 iterations after the 0th iteration
-  eval_batch_step: [ 0, 57 ]
+  eval_batch_step: [ 0, 19 ]
   cal_metric_during_train: False
   save_inference_dir:
   use_visualdl: False
@@ -84,8 +84,8 @@ Train:
   loader:
     shuffle: False
     drop_last: False
-    batch_size_per_card: 8
-    num_workers: 16
+    batch_size_per_card: 2
+    num_workers: 4
     collate_fn: ListCollator
 
 Eval:
@@ -102,7 +102,7 @@ Eval:
       - VQATokenLabelEncode: # Class handling label
           contains_re: True
           algorithm: *algorithm
-          class_path: *class_path
+          class_path: ./train_data/FUNSD/class_list.txt
           use_textline_bbox_info: *use_textline_bbox_info
       - VQATokenPad:
           max_seq_len: *max_seq_len
