@@ -15,7 +15,7 @@ Global:
   save_res_path: ./output/re_layoutxlm_funsd/res/
 
 Architecture:
-  model_type: vqa
+  model_type: kie
   algorithm: &algorithm "LayoutXLM"
   Transform:
   Backbone:
