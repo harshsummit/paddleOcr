@@ -23,7 +23,7 @@ class VQAReTokenLayoutLMPostProcess(object):
 
     def __call__(self, preds, label=None, *args, **kwargs):
         print('preds',type(preds))
-        # pred_relations = paddle.to_tensor(preds['pred_relations'])
+        pred_relations = preds['pred_relations']
         print(type(pred_relations))
         if isinstance(preds['pred_relations'], paddle.Tensor):
             pred_relations = pred_relations.numpy()
