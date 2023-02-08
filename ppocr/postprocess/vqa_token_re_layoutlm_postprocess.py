@@ -61,7 +61,7 @@ class VQAReTokenLayoutLMPostProcess(object):
         pred_relations_new = []
         for pred_relation in pred_relations:
             pred_relation_new = []
-            pred_relation = pred_relation[1:pred_relation[[0, 0, 0]] + 1]
+            pred_relation = pred_relation[1:pred_relation[0, 0, 0] + 1]
             for relation in pred_relation:
                 relation_new = dict()
                 relation_new['head_id'] = relation[0, 0]
