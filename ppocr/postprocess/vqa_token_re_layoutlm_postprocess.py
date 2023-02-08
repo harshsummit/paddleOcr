@@ -22,9 +22,9 @@ class VQAReTokenLayoutLMPostProcess(object):
         super(VQAReTokenLayoutLMPostProcess, self).__init__()
 
     def __call__(self, preds, label=None, *args, **kwargs):
-        print(preds)
+        print('preds',type(preds))
         pred_relations = preds['pred_relations']
-        print(pred_relations)
+        print(type(pred_relations))
         # if isinstance(preds['pred_relations'], paddle.Tensor):
         pred_relations = np.array(pred_relations)
         pred_relations = self.decode_pred(pred_relations)
