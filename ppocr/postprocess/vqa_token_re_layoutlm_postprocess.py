@@ -22,8 +22,9 @@ class VQAReTokenLayoutLMPostProcess(object):
 
     def __call__(self, preds, label=None, *args, **kwargs):
         pred_relations = preds['pred_relations']
-        if isinstance(preds['pred_relations'], paddle.Tensor):
-            pred_relations = pred_relations.numpy()
+        print(pred_relations)
+        # if isinstance(preds['pred_relations'], paddle.Tensor):
+        pred_relations = pred_relations.numpy()
         pred_relations = self.decode_pred(pred_relations)
 
         if label is not None:
@@ -58,7 +59,7 @@ class VQAReTokenLayoutLMPostProcess(object):
         pred_relations_new = []
         for pred_relation in pred_relations:
             pred_relation_new = []
-            pred_relation = pred_relation[1:pred_relation[0, 0, 0] + 1]
+            pred_relation = pred_relation[1:pred_relation[[0, 0, 0]] + 1]
             for relation in pred_relation:
                 relation_new = dict()
                 relation_new['head_id'] = relation[0, 0]
