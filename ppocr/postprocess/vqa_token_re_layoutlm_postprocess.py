@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import paddle
+import numpy as np
 
 
 class VQAReTokenLayoutLMPostProcess(object):
@@ -21,10 +22,11 @@ class VQAReTokenLayoutLMPostProcess(object):
         super(VQAReTokenLayoutLMPostProcess, self).__init__()
 
     def __call__(self, preds, label=None, *args, **kwargs):
+        print(preds)
         pred_relations = preds['pred_relations']
         print(pred_relations)
         # if isinstance(preds['pred_relations'], paddle.Tensor):
-        pred_relations = pred_relations.numpy()
+        pred_relations = np.array(pred_relations)
         pred_relations = self.decode_pred(pred_relations)
 
         if label is not None:
