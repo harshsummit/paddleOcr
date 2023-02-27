@@ -1,5 +1,5 @@
 Global:
-  use_gpu: True
+  use_gpu: False
   epoch_num: &epoch_num 200
   log_smooth_window: 10
   print_batch_step: 10
@@ -119,6 +119,7 @@ Eval:
           return_attention_mask: True
       - VQASerTokenChunk:
           max_seq_len: *max_seq_len
+          entities_labels: { 'name_q': 0, 'name_a': 1, 'dob_q': 2, 'dob_a':3, 'docid_a':4, 'docid_q':5}
       - Resize:
           size: [224,224]
       - NormalizeImage:

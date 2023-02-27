@@ -122,7 +122,7 @@ class SimpleDataSet(Dataset):
         data_line = self.data_lines[file_idx]
         try:
             data_line = data_line.decode('utf-8')
-            substr = data_line.strip("\n").split(self.delimiter)
+            substr = data_line.strip("\n").split('$t$')
             file_name = substr[0]
             file_name = self._try_parse_filename_list(file_name)
             label = substr[1]

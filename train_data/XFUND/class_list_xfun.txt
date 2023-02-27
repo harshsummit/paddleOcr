@@ -1,4 +1,6 @@
-OTHER
-QUESTION
-ANSWER
-HEADER
+name_q
+name_a
+dob_q
+dob_a
+docid_a
+docid_q
