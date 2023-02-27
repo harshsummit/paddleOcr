@@ -31,7 +31,7 @@ Architecture:
     checkpoints:
     # one of base or vi
     mode: vi
-    num_classes: &num_classes 11
+    num_classes: &num_classes 13
 
 Loss:
   name: VQASerTokenLayoutLMLoss
